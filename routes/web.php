@@ -13,6 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('saludo/{nombre}', function ($nombre) {
-    return view("Saludos ".$nombre);
-});
+// Route::get('saludo/{nombre}', function ($nombre) {
+//     return "Saludos ".$nombre;
+// });
+// Route::get('contacto', function () {
+//     return "Zona de contactos";
+// })->name('Contacto');
+// Route::get('/', function () {
+// echo "<a href ="{/*.route('Contacto')*/}">Contacto 1 </a><br>";
+// echo "<a href ="{/*.route('Contacto')*/}">Contacto 2 </a><br>";
+// echo "<a href ="{/*.route('Contacto')*/}">Contacto 3 </a><br>";
+// });
+// Route::get('/', function () {
+//     $nombre = "Jose";
+//     return view('home')->with('nombre', $nombre);
+// })-> name('home');
+
+Route::view('/', 'home')->name('home');
+Route::view('/acerca', 'acerca')->name('acerca');
+
+Route::get('/Portafolio', 'ejemploControllerr')->name('Portafolio');
+Route::view('/contacto', 'contacto')-> name('contacto');
+Route::post('Contacto', 'messController@store')->name('Contact');
