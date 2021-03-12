@@ -6,8 +6,16 @@ use Illuminate\Http\Request;
 
 class messController extends Controller
 {
-    public function store(Request $request)
+    public function store()
     {
-        return request('nombre');
+        request ()->validate([
+            'fullname' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'contenido' => 'required',
+        ],
+        [
+            'name.required'=>_('i need your name'),
+        ] );
     }
 }

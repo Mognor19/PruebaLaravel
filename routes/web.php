@@ -33,5 +33,5 @@ Route::view('/', 'home')->name('home');
 Route::view('/acerca', 'acerca')->name('acerca');
 
 Route::get('/Portafolio', 'ejemploControllerr')->name('Portafolio');
-Route::view('/contacto', 'contacto')-> name('contacto');
-Route::post('Contacto', 'messController@store')->name('Contact');
+Route::view('/contacto', 'Contacto')-> name('contacto');
+Route::post('Contacto', 'messController@store')->name('Contacto');
